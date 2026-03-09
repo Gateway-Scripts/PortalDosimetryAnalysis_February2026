@@ -90,16 +90,23 @@
 
             <Grid DockPanel.Dock="Right" DataContext="{Binding SelectedField}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="{Binding PredictedImage}" Width="200" Height="200"/>
-                <Image Source="{Binding AcquiredImage}" Width="200" Height="200" Grid.Column="1"/>
-                <Image Source="{Binding GammaImage}" Width="200" Height="200" Grid.Row="1"/>
+                <Image Source="{Binding PredictedImage}"/>
+                <Image Source="{Binding AcquiredImage}" Grid.Column="1"/>
+                <Image Source="{Binding GammaImage}" Grid.Row="1"/>
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <TextBlock Text="Gamma Analysis Criteria" FontWeight="Bold"/>
+                    <TextBlock Text="ROI = 5% Threshold"/>
+                    <TextBlock Text="Global Gamma"/>
+                    <TextBlock Text="Automatic Image Alignment"/>
+                    <TextBlock Text="Gamma Image representes 2%/2mm analysis criteria"/>
+                </StackPanel>
             </Grid>
 
         </DockPanel>
